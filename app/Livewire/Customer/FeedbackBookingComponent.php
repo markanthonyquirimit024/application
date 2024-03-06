@@ -18,14 +18,8 @@ class FeedbackBookingComponent extends Component
 
     public function mount($booking_id)
     {
-<<<<<<< HEAD
         $booking = Booking::findOrFail($booking_id);
         $this->booking_id = $booking_id;
-=======
-
-        $this->booking_id = $booking_id;
-        $booking = Booking::findOrFail($booking_id);
->>>>>>> db64038a240d8434b68a3e8ae7ad8984681f1af4
         $this->image = $booking->image;
         $this->service_title = $booking->service_title;
         $this->name = $booking->name;

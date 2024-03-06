@@ -27,7 +27,7 @@ class BookingController extends Controller
         $booking->price = $request->input('price');
         $booking->email = $request->input('email');
         $booking->phone = $request->input('phone');
-    $booking->image = $request->input('image');
+        $booking->image = $request->input('image');
         $booking->user_location = $request->input('user_location');
         $booking->time = $request->input('time');
         $booking->service_locations = $servicelocations->pluck('service_locations')->implode(', ');

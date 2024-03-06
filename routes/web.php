@@ -59,9 +59,6 @@ Route::get('/service/{service_slug}', ServiceDetailsComponent::class)->name('hom
 Route::post('/sprovider-details', [SearchController::class, 'getDetails'])->name('get.details');
 
 
-
-
-
 //For Customer
 Route::middleware(['auth:sanctum','verified', 'authcustomer'])->group(function () {
 Route::get('/customer/dashboard', CustomerDashboardComponent::class)->name('customer.dashboard');

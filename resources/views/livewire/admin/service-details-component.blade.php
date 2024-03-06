@@ -38,19 +38,9 @@
                                         <div class="col-md-12">
                                             <div class="post-content">
                                                 <p>{{$service->tagline}}</p>
+                                                <h4>Service Description:</h4>
                                                 <p>{{$service->description}}</p>
-                                                <h4>Inclusion</h4>
-                                                <ul class="list-styles">
-                                                    @foreach(explode("|", $service->inclusion) as $inclusion)
-                                                        <li><i class="fa fa-plus"></i>{{$inclusion}}</li>
-                                                    @endforeach
-                                                </ul>
-                                                <h4>Exclusion</h4>
-                                                <ul class="list-styles">
-                                                    @foreach(explode("|", $service->exclusion) as $exclusion)
-                                                        <li><i class="fa fa-minus"></i>{{$exclusion}}</li>
-                                                    @endforeach
-                                                </ul>
+                                                
                                             </div>
                                         </div>
                                     </div>
