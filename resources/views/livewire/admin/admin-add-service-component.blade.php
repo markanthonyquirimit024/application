@@ -70,20 +70,7 @@
                                                     @error('description') <p class="text-danger">{{$message}}</p> @enderror
                                                 </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3">Inclusion: </label>
-                                                <div class="col-sm-9">
-                                                    <textarea class="form-control"  wire:model="inclusion"></textarea>
-                                                    @error('inclusion') <p class="text-danger">{{$message}}</p> @enderror
-                                                </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3">Exclusion: </label>
-                                                <div class="col-sm-9">
-                                                    <textarea class="form-control"  wire:model="exclusion"></textarea>
-                                                    @error('exclusion') <p class="text-danger">{{$message}}</p> @enderror
-                                                </div>
-                                        </div>
+                                        
                                         <div class="form-group">
                                             <label for="slug" class="control-label col-sm-3">Thumbnail: </label>
                                                 <div class="col-sm-9">

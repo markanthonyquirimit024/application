@@ -40,8 +40,7 @@ class AdminAddServiceComponent extends Component
             'image' => 'required|mimes:jpeg,png',
             'thumbnail' => 'required|mimes:jpeg,png',
             'description' =>'required|string|min:10|max:255',
-            'inclusion' => 'required',
-            'exclusion' => 'required'
+            
         ]);
     
     }
@@ -57,8 +56,7 @@ class AdminAddServiceComponent extends Component
         'description' => 'required|string|min:10|max:255',
         'thumbnail' => 'required|mimes:jpeg,png',
         'image' => 'required|mimes:jpeg,png',
-        'inclusion' => 'required',
-        'exclusion' => 'required',
+        
     ]);
 
     $service = new Service();
@@ -71,8 +69,7 @@ class AdminAddServiceComponent extends Component
     $service->discount_type = $this->discount_type;
     $service->image = $this->image;
     $service->description = $this->description;
-    $service->inclusion = str_replace("\n", '|',trim($this->inclusion));
-    $service->exclusion = str_replace("\n", '|',trim($this->exclusion));
+
 
     $imageName = Carbon::now()->timestamp . '.' . $this->thumbnail->extension();
     $this->thumbnail->storeAs('services/thumbnails', $imageName);

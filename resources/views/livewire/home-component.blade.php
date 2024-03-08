@@ -399,24 +399,6 @@
 
 </div>
 
-<div class="new-bg-section">
-    <div class="contact-section">
-        <h1><b>CONTACT US</b></h1>
-        <select class="dropdown-box">
-            <option value="option1">BRANCH LOCATIONS</option>
-            <option value="option2">M.H. Del Pilar Street, Dagupan City, Philippines</option>
-            <option value="option3">Arellano Street, Dagupan City, Philippines</option>
-            <option value="option4">Dagupan-Lingayen Rd, Dagupan City, Philippines</option>
-        </select>
-        <div class="display-box">
-            EMAIL: atyourservice@gmail.com
-        </div>
-        <div class="display-box">
-            CONTACT NUMBER: +63 402 221 4920
-        </div>
-    </div>
-</div>
-
 <div class="about">
     <center><h1><b>What They Say About Us?</b></h1></center>
 </div>

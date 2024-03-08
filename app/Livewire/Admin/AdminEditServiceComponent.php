@@ -22,8 +22,7 @@ class AdminEditServiceComponent extends Component
     public $image;
     public $thumbnail;
     public $description;
-    public $inclusion;
-    public $exclusion;
+    
 
     public $newthumbnail;
     public $newimage;
@@ -50,8 +49,7 @@ class AdminEditServiceComponent extends Component
         $this->image = $service->image;
         $this->thumbnail = $service->thumbnail;
         $this->description = $service->description;
-        $this->inclusion = str_replace("|","\n", $service->inclusion);
-        $this->exclusion = str_replace("|","\n", $service->exclusion);
+
     }
 
     public function updated($fields)
@@ -64,10 +62,7 @@ class AdminEditServiceComponent extends Component
             'price' => 'required|numeric',
             'description' =>'required|string|min:10|max:255',
             'image' => 'required|mimes:jpeg,png',
-            'thumbnail' => 'required|mimes:jpeg,png',
-            
-            'inclusion' => 'required',
-            'exclusion' => 'required'
+            'thumbnail' => 'required|mimes:jpeg,png'
         ]);
 
         if($this->newthumbnail)
@@ -93,8 +88,6 @@ class AdminEditServiceComponent extends Component
         'service_category_id' => 'required',
         'price' => 'required|numeric',
         'description' =>'required|string|min:10|max:255',
-        'inclusion' => 'required',
-        'exclusion' => 'required',
     ]);
 
     if($this->newthumbnail)
@@ -121,8 +114,7 @@ class AdminEditServiceComponent extends Component
     $service->discount_type = $this->discount_type;
     $service->image = $this->image;
     $service->description = $this->description;
-    $service->inclusion = str_replace("\n", '|',trim($this->inclusion));
-    $service->exclusion = str_replace("\n", '|',trim($this->exclusion));
+    
 
     if($this->newthumbnail)
     {
