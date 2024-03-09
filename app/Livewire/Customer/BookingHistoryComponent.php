@@ -33,7 +33,6 @@ class BookingHistoryComponent extends Component
         $user = Auth::user();
 
         $bookings = Booking::where('user_id', $user->id)->orderBy('id', 'desc')->paginate(10);
-        $bookings = Booking::orderBy('id', 'desc')->paginate(10);
         return view('livewire.customer.booking-history-component', ['bookings' => $bookings])->layout('layouts.base');
     }
 }

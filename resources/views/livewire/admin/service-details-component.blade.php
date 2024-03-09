@@ -68,7 +68,7 @@
                                         <div class="panel-footer">
                                         @if(auth()->check())
                                             @if(auth()->user()->utype == 'CST')
-                                                <button class="btn btn-primary" onclick="togglePopup()">Book Now</button>
+                                                <button class="btn" style="background-color:#dd6737;color:black" onclick="togglePopup()">Book Now</button>
                                             @else
                                                 <p>Available only for customers</p>
                                             @endif
@@ -129,7 +129,7 @@
                                                                     @endforeach
                                                                 </select>
                                                             </div>
-                                                            <button type="submit">Done Booking</button>
+                                                            <button type="submit" style="background-color:#dd6737;color:black">Done Booking</button>
                                                         </form>
                                                     </div>
                                                 @endif

@@ -21,7 +21,6 @@ class AuthCustomer
         } else {
             session()->flush();
 
-            // For APIs, return a JSON response
             if ($request->expectsJson()) {
                 return response()->json(['error' => 'Unauthorized'], 401);
             }

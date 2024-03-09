@@ -498,7 +498,7 @@
                                     @error('phone') <p class="text-danger">{{$message}}</p> @enderror
                                     <textarea placeholder="Your Message" name="message" id="message" wire:model="message" required=""></textarea>
                                     @error('message') <p class="text-danger">{{$message}}</p> @enderror
-                                    <input type="submit" name="Submit" value="Send Message" class="btn btn-primary">
+                                    <input type="submit" name="Submit" value="Send Message" class="btn" style="background-color:#dd6737;color:black">
                                 </form>
                                 <div id="result"></div>
                             </div>

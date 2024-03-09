@@ -5,7 +5,22 @@
 
 
 <div class="content-section-2" >
-    <h1 style="color: white;">AYS Services</h1>
+    <h1 style="color: white; margin-top:300px">Service Categories</h1>
+</div>
+
+<div class="filter-title">
+    <div class="title-header">
+        <h2 style="color:#fff;">BOOK A SERVICE</h2>
+        <p class="lead">Book a service at a very affordable price.</p>
+    </div>
+    <div class="filter-header">
+        <form id="sform" action="{{route('searchService')}}" method="post">
+            @csrf
+            <input type="text" id="q" name="q" required="required" placeholder="What Services do you want?"
+                class="input-large typeahead" autocomplete="off">
+            <input type="submit" name="submit" value="Search">
+        </form>
+    </div>
 </div>
 
 <div class="slick-carousel">
@@ -22,6 +37,9 @@
         @endforeach
     </div>
 </div>
+
+
+<div style="color:white; text-align:center; font-size:40px; margin-top:150px;margin-bottom:50px">AYS Services</div>
 
 <div class="table-grid">
     <!-- Table 1 -->
@@ -40,7 +58,7 @@
             </a>
                 @if(auth()->check())
                     @if(auth()->user()->utype == 'CST')
-                        <button class="btn btn-primary" onclick="togglePopup()">Book Now</button>
+                        <button class="btn" style="background-color:#dd6737;color:black" onclick="togglePopup()">Book Now</button>
                     @else
                         <p>Available only for customers</p>
                     @endif
@@ -104,7 +122,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit">Done Booking</button>
+                    <button type="submit" style="background-color:#dd6737;color:black">Done Booking</button>
                 </form>
             </div>
             @endif

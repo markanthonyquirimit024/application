@@ -30,7 +30,7 @@
                 
                 <ul class="collapse">
                     <li class="title">
-                        <a href="/"><img src="{{ asset('images/logo.png') }}" style="width: 50px; color: white;" class="rounded-pill me-3" alt="logo">At Your Service</a>
+                        <a href="/"><img src="{{ asset('images/logo.png') }}" style="width: 50px;" class="rounded-pill me-3" alt="logo">At Your Service</a>
                     </li>
 
                     <li>
