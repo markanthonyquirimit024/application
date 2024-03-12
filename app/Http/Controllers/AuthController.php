@@ -105,20 +105,9 @@ class AuthController extends Controller
     public function sproviderLogout(Request $request)
     {
         $user = $request->user();
-    public function sproviderLogout(Request $request)
-    {
-        $user = $request->user();
 
         if ($user && $user->utype === 'SVP') {
             $user->tokens()->delete();
-        if ($user && $user->utype === 'SVP') {
-            $user->tokens()->delete();
-
-            return Response::json(['message' => 'Service Provider logged out successfully'], 200);
-        } else {
-            return Response::json(['error' => 'Unauthorized', 'message' => 'Service Provider not authenticated'], 401);
-        }
-    }
             return Response::json(['message' => 'Service Provider logged out successfully'], 200);
         } else {
             return Response::json(['error' => 'Unauthorized', 'message' => 'Service Provider not authenticated'], 401);
