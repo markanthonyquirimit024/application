@@ -50,11 +50,10 @@ class AdminAddServiceComponent extends Component
     $this->validate([
         'name' => 'required',
         'slug' => 'required',
-        'tagline' => 'required|string|min:10|max:80',
+        'tagline' => 'required|string|min:10|max:255',
         'service_category_id' => 'required',
         'price' => 'required|numeric',
-        'description' => 'required|string|min:10|max:255',
-        'thumbnail' => 'required|mimes:jpeg,png',
+        'description' => 'required|string|min:10|max:1000',
         'image' => 'required|mimes:jpeg,png',
         
     ]);
@@ -69,11 +68,6 @@ class AdminAddServiceComponent extends Component
     $service->discount_type = $this->discount_type;
     $service->image = $this->image;
     $service->description = $this->description;
-
-
-    $imageName = Carbon::now()->timestamp . '.' . $this->thumbnail->extension();
-    $this->thumbnail->storeAs('services/thumbnails', $imageName);
-    $service->thumbnail = $imageName;
 
     $imageName2 = Carbon::now()->timestamp . '.' . $this->image->extension();
     $this->image->storeAs('services', $imageName2);

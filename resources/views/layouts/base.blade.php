@@ -30,7 +30,7 @@
                 
                 <ul class="collapse">
                     <li class="title">
-                        <a href="/"><img src="{{ asset('images/logo.png') }}" style="width: 50px;" class="rounded-pill me-3" alt="logo">At Your Service</a>
+                        <a href="/" style="color:white;"><img src="{{ asset('images/logo.png') }}" style="width: 50px;" class="rounded-pill me-3" alt="logo">At Your Service</a>
                     </li>
 
                     <li>
@@ -43,7 +43,7 @@
                     @if(Route::has('login'))
                         @auth
                             @if(Auth::user()->utype==='ADM')
-                                <li class="login-form"> <a href="#" title="Register">My Account (Admin)</a>
+                                <li class="login-form" style="background-color: #713418;border-radius:10px"> <a href="#" title="Register" style="color: black;">My Account (Admin)</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                                         <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
@@ -56,7 +56,7 @@
                                     </ul>
                                 </li>
                             @elseif(Auth::user()->utype==='SVP')
-                                <li class="login-form"> <a href="#" title="Register">My Account ({{Auth::user()->name}})</a>
+                                <li class="login-form" style="background-color: #713418;border-radius:10px"> <a href="#" title="Register" style="color: black;">My Account ({{Auth::user()->name}})</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{route('sprovider.dashboard')}}">Dashboard</a></li>
                                         <li><a href="{{route('sprovider.profile')}}">Profile</a></li>
@@ -65,7 +65,7 @@
                                     </ul>
                                 </li>
                             @else
-                                <li class="login-form"> <a href="#" title="Register">My Account ({{Auth::user()->name}})</a>
+                                <li class="login-form" style="background-color: #713418;border-radius:10px"> <a href="#" title="Register" style="color: black;">My Account ({{Auth::user()->name}})</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
                                         <li><a href="{{route('customer.profile')}}">Profile</a></li>
@@ -78,7 +78,7 @@
                                 @csrf
                             </form>
                         @else
-                        <li class="login-form"> <a href="#" title="Register">Account</a>
+                        <li class="login-form" style="background-color: #713418;border-radius:10px"> <a href="#" title="Login" style="color: black;">Account</a>
                             <ul class="drop-down one-column hover-fade">
                                 <li><a href="{{route('login')}}">Login</a></li>
                                 <li><a href="{{route('register')}}">Register</a></li>

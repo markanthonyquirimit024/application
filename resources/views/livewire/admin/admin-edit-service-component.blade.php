@@ -85,18 +85,6 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3">Thumbnail: </label>
-                                                <div class="col-sm-9">
-                                                    <input type="file" class="form-control-file" name="thumbnail" wire:model="newthumbnail">
-                                                    @error('newthumbnail') <p class="text-danger">{{$message}}</p> @enderror
-                                                    @if($newthumbnail)
-                                                        <img src="{{$newthumbnail->temporaryUrl()}}" width="60" />
-                                                    @else
-                                                        <img src="{{asset('images/services/thumbnail') }}/{{$thumbnail}}" width="60" />
-                                                    @endif  
-                                                </div>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="slug" class="control-label col-sm-3">Image: </label>
                                                 <div class="col-sm-9">
                                                     <input type="file" class="form-control-file" name="image" wire:model="newimage">
