@@ -50,4 +50,6 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function () {
     Route::post('/logout', [AuthController::class, 'adminLogout']);
     Route::get('admin/users', [AuthController::class, 'index']);
 });
+// Route::post('/reset-password', [AuthController::class, 'reset']);
+
 
