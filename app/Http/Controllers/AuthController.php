@@ -81,7 +81,7 @@ class AuthController extends Controller
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'phone' => $input['phone'],
-            'utype' => "CST",
+            'utype' => "ADM",
         ]);
 
         $token = $user->createToken('sanctum-token')->plainTextToken;
