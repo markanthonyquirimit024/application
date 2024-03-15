@@ -4,9 +4,7 @@
             <div class="container">
                 <div class="row" style="margin-top: -30px;">
                     <div class="titles">
-                        <h2>{{$scategory->name}} <span>Services</span></h2>
-                        <i class="fa fa-plane"></i>
-                        <hr class="tall">
+                        <h2>{{$scategory->name}} <span></span></h2>
                     </div>
                 </div>
             </div>
@@ -29,7 +27,7 @@
                                         <p>{{$service->tagline}}</p>
                                         <div class="content-btn"><a href="{{route('home.services_details', ['service_slug' => $service->slug])}}"
                                                 class="btn" style="background-color:#dd6737;color:black">Book Now</a></div>
-                                        <div class="price"><span>&#36;</span><b>From</b>{{$service->price}}</div>
+                                        <div class="price"><span>&#8369;</span><b>From</b>{{$service->price}}</div>
                                     </div>
                                 </a>
                             </div>

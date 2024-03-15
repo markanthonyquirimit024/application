@@ -171,8 +171,6 @@
             var currentTimeString = (currentHours < 10 ? '0' : '') + currentHours + ':' + (currentMinutes < 10 ? '0' : '') + currentMinutes;
             timeInput.value = currentTimeString;
 
-            // Calculate the deadline 5 minutes from now
-            var deadline = new Date(today.getTime() + 5 * 60 * 1000);
 
             // Optionally, you can also add an event listener to handle changes in the selected date
             dateInput.addEventListener('change', function () {
@@ -194,12 +192,6 @@
                 if (selectedTime < currentTimeInManila) {
                     alert('Please select a future time for your booking.');
                     timeInput.value = currentTimeString; // Set the time back to the current time if invalid
-                }
-
-                // Validate against the 5-minute deadline
-                if (selectedTime > deadline) {
-                    alert('You have exceeded the 5-minute limit for booking.');
-                    timeInput.value = currentTimeString; // Reset to the current time if exceeded the deadline
                 }
             });
         });
