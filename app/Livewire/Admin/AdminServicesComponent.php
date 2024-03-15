@@ -14,10 +14,6 @@ class AdminServicesComponent extends Component
     public function deleteService($service_id)
     {
         $service = Service::find($service_id);
-        if($service->thumbnail)
-        {
-            unlink('images/services/thumbnails/' . $service->thumbnail);
-        }
         if($service->image)
         {
             unlink('images/services/' . $service->image);

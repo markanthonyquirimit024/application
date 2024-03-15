@@ -5,22 +5,7 @@
 
 
 <div class="content-section-2" >
-    <h1 style="color: white; margin-top:300px">Service Categories</h1>
-</div>
-
-<div class="filter-title">
-    <div class="title-header">
-        <h2 style="color:#fff;">BOOK A SERVICE</h2>
-        <p class="lead">Book a service at a very affordable price.</p>
-    </div>
-    <div class="filter-header">
-        <form id="sform" action="{{route('searchService')}}" method="post">
-            @csrf
-            <input type="text" id="q" name="q" required="required" placeholder="What Services do you want?"
-                class="input-large typeahead" autocomplete="off">
-            <input type="submit" name="submit" value="Search">
-        </form>
-    </div>
+    <h1 style="color: white; margin-top:50px">Service Categories</h1>
 </div>
 
 <div class="slick-carousel">

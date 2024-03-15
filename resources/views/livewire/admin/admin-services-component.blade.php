@@ -68,7 +68,7 @@
                                     @foreach($services as $service)
                                         <tr>
                                             <td>{{$service->id}}</td>
-                                            <td><img src= width="60"/> </td>
+                                            <td><img src="{{asset('/images/services')}}/{{$service->image}}" style="width:60px; height:auto"/> </td>
                                             <td>{{$service->name}}</td>
                                             <td>{{$service->price}}</td>
                                             <td>

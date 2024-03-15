@@ -70,21 +70,18 @@ class AuthController extends Controller
             'password' => $this->passwordRules(),
             'phone' => 'required|numeric|min:11',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
-            'registeras' => ['required', 'in:CST'],
         ]);
 
         if ($validator->fails()) {
             return Response::json(['success' => false, 'error' => $validator->errors()], 422);
         }
 
-        $registeras = $input['registeras'];
-
         $user = User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'phone' => $input['phone'],
-            'utype' => $registeras,
+            'utype' => "CST",
         ]);
 
         $token = $user->createToken('sanctum-token')->plainTextToken;
@@ -105,18 +102,18 @@ class AuthController extends Controller
         }
     }
 
-    // public function sproviderLogout(Request $request)
-    // {
-    //     $user = $request->user();
+    public function sproviderLogout(Request $request)
+    {
+        $user = $request->user();
 
-    //     if ($user && $user->utype === 'SVP') {
-    //         $user->tokens()->delete();
+        if ($user && $user->utype === 'SVP') {
+            $user->tokens()->delete();
 
-    //         return Response::json(['message' => 'Service Provider logged out successfully'], 200);
-    //     } else {
-    //         return Response::json(['error' => 'Unauthorized', 'message' => 'Service Provider not authenticated'], 401);
-    //     }
-    // }
+            return Response::json(['message' => 'Service Provider logged out successfully'], 200);
+        } else {
+            return Response::json(['error' => 'Unauthorized', 'message' => 'Service Provider not authenticated'], 401);
+        }
+    }
 
     public function adminLogout(Request $request)
     {

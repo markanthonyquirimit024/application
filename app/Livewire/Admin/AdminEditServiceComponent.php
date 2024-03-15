@@ -20,11 +20,9 @@ class AdminEditServiceComponent extends Component
     public $discount;
     public $discount_type;
     public $image;
-    public $thumbnail;
     public $description;
     
 
-    public $newthumbnail;
     public $newimage;
     public $service_id;
 
@@ -47,7 +45,6 @@ class AdminEditServiceComponent extends Component
         $this->featured = $service->featured;
         $this->discount_type = $service->discount_type;
         $this->image = $service->image;
-        $this->thumbnail = $service->thumbnail;
         $this->description = $service->description;
 
     }
@@ -62,15 +59,8 @@ class AdminEditServiceComponent extends Component
             'price' => 'required|numeric',
             'description' =>'required|string|min:10|max:255',
             'image' => 'required|mimes:jpeg,png',
-            'thumbnail' => 'required|mimes:jpeg,png'
         ]);
 
-        if($this->newthumbnail)
-        {
-            $this->validateOnly($fields,[
-                'newthumbnail' => 'required|mimes:jpeg,png'
-            ]);
-        }
         if($this->newimage)
         {
             $this->validateOnly($fields,[
@@ -84,18 +74,12 @@ class AdminEditServiceComponent extends Component
     $this->validate([
         'name' => 'required',
         'slug' => 'required',
-        'tagline' => 'required|string|min:10|max:80',
+        'tagline' => 'required|string|min:10|max:255',
         'service_category_id' => 'required',
         'price' => 'required|numeric',
-        'description' =>'required|string|min:10|max:255',
+        'description' =>'required|string|min:10|max:1000',
     ]);
 
-    if($this->newthumbnail)
-        {
-            $this->validate([
-                'newthumbnail' => 'required|mimes:jpeg,png'
-            ]);
-        }
         if($this->newimage)
         {
             $this->validate([
@@ -114,15 +98,6 @@ class AdminEditServiceComponent extends Component
     $service->discount_type = $this->discount_type;
     $service->image = $this->image;
     $service->description = $this->description;
-    
-
-    if($this->newthumbnail)
-    {
-        unlink('images/services/thumbnails'.'/'.$service->thumbnail);
-        $imageName = Carbon::now()->timestamp . '.' . $this->newthumbnail->extension();
-        $this->newthumbnail->storeAs('services/thumbnails', $imageName);
-        $service->thumbnail = $imageName;
-    }
     
     if($this->newimage)
     {

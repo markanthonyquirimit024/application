@@ -89,8 +89,13 @@
                                                     <td>
                                                         @if($booking->booking_status == 'Waiting for Approval')
                                                         <a class="btn btn-primary" href="{{route('sprovider.booknow', $booking->id)}}">&#10003; Approve</a>
-                                                        @elseif($booking->booking_status == 'Cancelled Booking')
+                                                        <a class="btn" style="background-color: crimson;" onclick="confirm('Are you sure you want to cancel this booking?') || event.stopImmediatePropagation()" wire:click.prevent="destroy({{ $booking->id }})">
+                                                                <i class="fa fa-times"> Cancel Booking</i>
+                                                            </a>
+                                                        @elseif($booking->booking_status == 'Provider Cancelled Booking')
                                                         <p class="text-light">Booking Cancelled</p>
+                                                        @elseif($booking->booking_status == 'Cancelled Booking')
+                                                        <p class="text-light">Booking Cancelled by Customer</p>
                                                         @else
                                                         <p class="text-light">Approved</p>
                                                         @endif

@@ -59,8 +59,10 @@
                                                             <a class="btn" style="background-color: crimson;" onclick="confirm('Are you sure you want to cancel this booking?') || event.stopImmediatePropagation()" wire:click.prevent="destroy({{ $booking->id }})">
                                                                 <i class="fa fa-times"> Cancel Booking</i>
                                                             </a>
+                                                        @elseif($booking->booking_status == 'Provider Cancelled Booking')
+                                                        <p style="color:white">Provider Cancelled your booking</p>
                                                         @elseif($booking->booking_status == 'Cancelled Booking')
-                                                            <p class="text-light">Booking Successfully Canceled</p>
+                                                            <p style="color:white">Booking Successfully Canceled</p>
                                                         @elseif($booking->booking_status == 'Successful Booking')
                                                             <a class="btn" href="{{ route('customer.booking_feedback', ['booking_id' => $booking->id]) }}" style="color:#1c0d06; background-color:#dd6737">&#10003; Feedback</a>
                                                         @endif

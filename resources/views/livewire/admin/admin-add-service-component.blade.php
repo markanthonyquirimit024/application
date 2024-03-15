@@ -47,7 +47,7 @@
                                             <label for="slug" class="control-label col-sm-3">Service Category: </label>
                                                 <div class="col-sm-9">
                                                     <select class="form-control" wire:model="service_category_id">
-                                                        <option value="">Selec Service Category</option>
+                                                        <option value="">Select Service Category</option>
                                                         @foreach($categories as $category)
                                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                                         @endforeach
@@ -71,16 +71,6 @@
                                                 </div>
                                         </div>
                                         
-                                        <div class="form-group">
-                                            <label for="slug" class="control-label col-sm-3">Thumbnail: </label>
-                                                <div class="col-sm-9">
-                                                    <input type="file" class="form-control-file" name="thumbnail" wire:model="thumbnail">
-                                                    @error('thumbnail') <p class="text-danger">{{$message}}</p> @enderror
-                                                    @if($thumbnail)
-                                                    <img src="{{$thumbnail->temporaryUrl()}}" width="60" />
-                                                    @endif
-                                                </div>
-                                        </div>
                                         <div class="form-group">
                                             <label for="slug" class="control-label col-sm-3">Image: </label>
                                                 <div class="col-sm-9">

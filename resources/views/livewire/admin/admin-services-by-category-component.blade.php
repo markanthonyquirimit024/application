@@ -39,8 +39,6 @@
                                         {{$category_name}} Service 
                                         </div>
                                         <div class="col-md-6">
-                                        <a href="#" class="btn btn-info pull-right">Add New</a>
-
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +57,6 @@
                                         <th scope="col">Status</th>
                                         <th scope="col">category</th>
                                         <th scope="col">Created At</th>
-                                        <th scope="col">Action</th>
 
                                     </tr>
                                 </thead>
@@ -67,7 +64,7 @@
                                     @foreach($services as $service)
                                         <tr>
                                             <td>{{$service->id}}</td>
-                                            <td><img src="{{asset('/images/services/thumbnails')}}/{{$service->thumbnail}}" width="60"/> </td>
+                                            <td><img src="{{asset('/images/services')}}/{{$service->image}}" width="60"/></td>
                                             <td>{{$service->name}}</td>
                                             <td>{{$service->price}}</td>
                                             <td>
@@ -79,10 +76,6 @@
                                             </td>
                                             <td>{{$service->category->name}}</td>
                                             <td>{{$service->created_at}}</td>
-                                            <td>
-                                                <a href="#"><i class="fa fa-edit fa-2x text-info"></i></a>
-                                                <a href="#"  style="margin-left: 10px;"><i class="fa fa-times fa-2x text-danger"></i></a>
-                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
